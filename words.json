@@ -1,12 +1,12 @@
 {
     "words": [
         {
-            "viet": "Nhà",
-            "eng": "Home"
+            "eng": "a",
+            "viet": "a"
         },
         {
-            "viet": "Một",
-            "eng": "One"
+            "eng": "b",
+            "viet": "b"
         }
     ]
 }
