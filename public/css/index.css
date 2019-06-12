@@ -13,3 +13,21 @@
     height: initial;
 }
 
+.cancel,
+.edit,
+.update,
+.delete {
+    opacity: 0;
+}
+
+tr:hover button {
+    opacity: 1;
+}
+
+tr:focus-within {
+    background-color: aliceblue;
+}
+
+tr:focus-within button {
+    opacity: 1;
+}

@@ -14,10 +14,33 @@ app.post('/newWord', (req, res) => {
         if (err) {
             console.log(err);
             res.end();
-            return
+            return;
         }
+        res.send({status: 'Successful'});
     })
-    res.send({addWord: 'Successful'})
+})
+
+app.post('/updateTrans', (req, res) => {
+    console.log(req.body)
+    db.update({_id: req.body._id}, req.body, (err) => {
+        if (err) {
+            console.log(err);
+            res.end();
+            return;
+        }
+        res.send({status: 'Successful'});
+    })
+})
+
+app.get('/deleteWord', (req, res) => {
+    db.remove({_id: req.query.delId}, (err) => {
+        if (err) {
+            console.log(err);
+            res.end();
+            return;
+        }
+        res.send({status: 'Success'})
+    })
 })
 
 app.get('/getAllWords', (req, res) => {
