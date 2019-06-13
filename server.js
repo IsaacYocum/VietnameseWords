@@ -1,5 +1,6 @@
 const express = require('express');
 const Datastore = require('nedb');
+const RegEx = require('regex');
 const app = express();
 const db = new Datastore('words.db');
 
@@ -63,6 +64,34 @@ app.get('/getRandomWord', (req, res) => {
         res.send([docs[rand]]);
     })
 })
+
+app.get('/search', (req, res) => {
+    let lang = req.query.lang;
+    let st = new RegExp(req.query.st);
+    console.log(req.query)
+
+    var toFind = {};
+    if (lang === 'viet') {
+        toFind.viet = st;
+    } else {
+        toFind.eng = st;
+    }
+
+    console.log(toFind)
+
+    db.find(toFind, (err, docs) => {
+        if (err) {
+            res.end();
+            return;
+        }
+        console.log(docs);
+        res.send(docs);
+    })
+})
+
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+}
 
 
 

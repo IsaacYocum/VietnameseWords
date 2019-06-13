@@ -9,7 +9,7 @@ $(() => {
             alert("Please enter the Vietnamese word or sentence and it's English translation before submitting.");
             return
         }
-        
+
         let newTrans = {
             viet: $('#vWord').val().toLowerCase(),
             eng: $('#eWord').val().toLowerCase()
@@ -31,13 +31,38 @@ $(() => {
         });
     })
 
+    $('#vWord, #eWord').keyup((e) => {
+        let searchedTerm = new Object;
+        let language = (e.target.id === 'eWord') ? 'eng' : 'viet';
+        
+        searchedTerm.lang = language;
+        console.log(e.target.st)
+        searchedTerm.st = e.target.value
+        console.log(searchedTerm.st)
+        console.log(searchedTerm)
+
+        $.ajax({
+            url: '/search',
+            data: searchedTerm,
+            dataType: 'json',
+            contentType: 'application/json',
+            success: (resp) => {
+                console.log(resp);
+                populateTable(resp, resp.length)
+            },
+            error: (resp) => {
+                console.log(resp);
+                return;
+            }
+        });
+    })
+
     let originalTrans = {};
     $(document).on('click', '.edit', (e) => {
         console.log($('.update'))
         let id = $(e.target).parents().parents().attr('id');
 
         if ($('.update').length > 0) {
-            // cancelMultipleTrans(id, $('.update'));
             alert('Either cancel or submit the previous edit before editing this translation.')
             return;
         }
