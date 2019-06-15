@@ -1,21 +1,31 @@
 $(() => {
-    $("body").keydown((e) => {
-        if (e.which == 38) { getAllWords(); }
-        if (e.which == 39) { getRandomWord(); }
-    })
+    var allowDeleting = false;
+    $('#showAll').click(() => { getAllWords(); cancelDelete(); });
+    $('#random').click(() => { getRandomWord(); cancelDelete(); });
+
+    $(document).on('keyup', 'td', (e) => {
+        updateTrans($(e.target).parents('tr').attr('id'));
+    });
+
+    $(document).on('click', 'tr', (e) => {
+        if (allowDeleting) {
+            console.log($(e.target).parents('tr'))
+            let target = $(e.target).parents('tr');
+            target.css("background-color", "lightblue");
+            target.addClass('toBeDeleted');
+        }
+    });
 
     $('#submitNewWordBtn').click(() => {
         if ($('#vWord').val() === '' || $('#eWord').val() === '') {
             alert("Please enter the Vietnamese word or sentence and it's English translation before submitting.");
-            return
+            return;
         }
 
         let newTrans = {
-            viet: $('#vWord').val().toLowerCase(),
-            eng: $('#eWord').val().toLowerCase()
-        }
-
-        console.log(newTrans)
+            viet: $('#vWord').val(),
+            eng: $('#eWord').val()
+        };
 
         $.ajax({
             url: '/newWord',
@@ -25,21 +35,28 @@ $(() => {
             data: JSON.stringify(newTrans),
             success: (resp) => {
                 console.log(resp);
-                $('#vWord').val('')
-                $('#eWord').val('')
+                $('#vWord').val('');
+                $('#eWord').val('');
+                populateTable(newTrans, 1);
+            },
+            error: (err) => {
+                console.log("Error adding a new translation: " + err);
+                return;
             }
         });
-    })
+    });
+
+    $('#clear').click(() => {
+        $('#vWord').val('');
+        $('#eWord').val('');
+    });
 
     $('#vWord, #eWord').keyup((e) => {
         let searchedTerm = new Object;
         let language = (e.target.id === 'eWord') ? 'eng' : 'viet';
-        
+
         searchedTerm.lang = language;
-        console.log(e.target.st)
-        searchedTerm.st = e.target.value
-        console.log(searchedTerm.st)
-        console.log(searchedTerm)
+        searchedTerm.st = e.target.value;
 
         $.ajax({
             url: '/search',
@@ -48,75 +65,92 @@ $(() => {
             contentType: 'application/json',
             success: (resp) => {
                 console.log(resp);
-                populateTable(resp, resp.length)
+                populateTable(resp, resp.length, searchedTerm.st, searchedTerm.lang)
             },
             error: (resp) => {
                 console.log(resp);
                 return;
             }
         });
-    })
-
-    let originalTrans = {};
-    $(document).on('click', '.edit', (e) => {
-        console.log($('.update'))
-        let id = $(e.target).parents().parents().attr('id');
-
-        if ($('.update').length > 0) {
-            alert('Either cancel or submit the previous edit before editing this translation.')
-            return;
-        }
-
-        originalTrans.viet = $(`#${id}`).children().eq(0).text();
-        originalTrans.eng = $(`#${id}`).children().eq(1).text();
-        originalTrans._id = id;
-        editTranslation(id);
-    })
+    });
 
     $(document).on('click', '.delete', (e) => {
-        let id = $(e.target).parents().parents().attr('id');
-        deleteWord(id);
-    })
+        allowDelete();
+    });
 
-    $(document).on('click', '.update', (e) => {
-        let id = $(e.target).parents().parents().attr('id');
-        updateTrans(id, originalTrans);
-    })
+    function allowDelete() {
+        allowDeleting = true;
+        $('.delete').html('<i class="fas fa-check"></i>');
+        $('.delete').addClass('confirmDelete').removeClass('delete');
+        $('#deletionButtons').append('<button class="cancelDelete btn btn-danger"><i class="fas fa-times"></i></button>');
+        $('td').prop('contenteditable', false);
+    };
 
-    $(document).on('click', '.cancel', (e) => {
-        let id = $(e.target).parents().parents().attr('id');
-        cancelTrans(id);
+    $(document).on('click', '.cancelDelete', (e) => {
+        cancelDelete();
+    });
+
+    function cancelDelete() {
+        allowDeleting = false;
+        $('.cancelDelete').remove();
+        $('.confirmDelete').html('<i class="fas fa-trash"></i>');
+        $('.confirmDelete').addClass('delete').removeClass('confirmDelete');
+        $('tr').css("background-color", "unset");
+        $('.toBeDeleted').removeClass('toBeDeleted');
+        $('td').prop('contenteditable', true);
+    };
+
+    $(document).on('click', '.confirmDelete', (e) => {
+        let ids = $('.toBeDeleted');
+        let idsToDelete = [];
+        for (let i = 0; i < ids.length; i++) {
+            idsToDelete.push({ _id: ids[i].id });
+        }
+
+        if (idsToDelete.length == 0) {
+            cancelDelete();
+            return;
+        }
+        deleteWord(idsToDelete);
     })
+  
+    function deleteWord(id) {
+        if (confirm('Please confirm this deletion.')) {
+            $.ajax({
+                url: '/deleteWord',
+                data: { delId: id },
+                dataType: 'json',
+                success: (resp) => {
+                    for (let i = 0; i < id.length; i++) {
+                      $(`#${id[i]._id}`).empty();
+                    };
+                    cancelDelete();
+                },
+                error: (resp) => {
+                    console.log(resp.status);
+                    cancelDelete();
+                    return;
+                }
+            });
+        } else {
+            return;
+        };
+    };
 
     function getAllWords() {
         $.getJSON('/getAllWords').then((resp) => populateTable(resp, resp.length));
-    }
+    };
 
     function getRandomWord() {
         $.getJSON('/getRandomWord').then((resp) => populateTable(resp, resp.length));
-    }
-
-    function editTranslation(id) {
-        for (let i = 0; i < $(`#${id}`).children().length - 1; i++) {
-            let tmp = $(`#${id}`).children().eq(i).text();
-            $(`#${id}`).children().eq(i).empty().append(`
-                <input type="text" value="${tmp}">
-            `)
-        }
-
-        $(`#${id}`).children().last('td').empty().append(`
-            <button class="update btn btn-primary">Update</button>
-            <button class="cancel btn btn-danger">Cancel</button>
-        `);
-    }
+    };
 
     function updateTrans(id) {
-        console.log($(`#${id}`).children().eq(0).children().val())
         let updatedTrans = {
-            viet: $(`#${id}`).children().eq(0).children().val(),
-            eng: $(`#${id}`).children().eq(1).children().val(),
+            viet: $(`#${id}`).children('td').eq(0).text(),
+            eng: $(`#${id}`).children('td').eq(1).text(),
             _id: id
-        }
+        };
 
         $.ajax({
             url: '/updateTrans',
@@ -125,61 +159,31 @@ $(() => {
             contentType: 'application/json',
             data: JSON.stringify(updatedTrans),
             success: (resp) => {
-                console.log("Update " + resp);
-                $(`#${id}`).children().eq(0).empty().html(updatedTrans.viet);
-                $(`#${id}`).children().eq(1).empty().html(updatedTrans.eng);
-                $(`#${id}`).children().last('td').empty().append(`
-                    <button class="edit btn btn-warning">Edit</button>
-                    <button class="delete btn btn-danger">Delete</button>
-                `);
+                console.log("Update successful");
+            },
+            error: (err) => {
+                console.log('Error updating translation:' + err);
+                return;
             }
         });
-    }
+    };
 
-    function cancelTrans(id) {
-        $(`#${id}`).children().eq(0).empty().html(originalTrans.viet);
-        $(`#${id}`).children().eq(1).empty().html(originalTrans.eng);
+    function populateTable(data, num, searchedTerm, lang) {
+        $('tbody').empty();
 
-        $(`#${id}`).children().last('td').empty().append(`
-            <button class="edit btn btn-warning">Edit</button>
-            <button class="delete btn btn-danger">Delete</button>
-        `);
-    }
-
-    function deleteWord(id) {
-        if (confirm('Are you sure you want to delete this translation?')) {
-            $.ajax({
-                url: '/deleteWord',
-                data: { delId: id },
-                dataType: 'json',
-                success: (resp) => {
-                    console.log(resp.status);
-                    $(`#${id}`).empty();
-                },
-                error: (resp) => {
-                    console.log(resp.status);
-                    return;
-                }
-            });
-        } else {
-            return;
-        }
-    }
-
-    function populateTable(data, num) {
-        $('tbody').empty()
+        if (searchedTerm) {
+            for (let i = 0; i < num; i++) {
+                data[i][lang] = data[i][lang].split(searchedTerm).join(`<mark>${searchedTerm}</mark>`);
+            };
+        };
 
         for (let i = 0; i < num; i++) {
             $('tbody').append(`
-                <tr id="${data[i]._id}">
-                    <td class="col-lg-4">${data[i].viet}</td>
-                    <td class="col-lg-4">${data[i].eng}</td>
-                    <td class="col-lg-4">
-                        <button class="edit btn btn-warning">Edit</button>
-                        <button class="delete btn btn-danger">Delete</button>
-                    </td>
-                </tr>
+                  <tr id="${data[i]._id}">
+                      <td contenteditable="true" spellcheck="false">${data[i].viet}</td>
+                      <td contenteditable="true">${data[i].eng}</td>
+                  </tr>
             `);
-        }
-    }
-})
+        };
+    };
+});

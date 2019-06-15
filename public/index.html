@@ -7,39 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/png" href="https://cdn.glitch.com/a90b6326-3744-4ba7-b19c-e23c9354bfc2%2Fvietnam.ico?v=1560542662505">
     <title>Vietnamese Words</title>
 </head>
 
 <body>
     <div class="container text-center">
-        <!-- <button id="newWordBtn" class="btn btn-primary text-center">Add a new word!</button> -->
-        <!-- <br> -->
-        <h3>Search or add words</h3>
+        <h3>Add or search words</h3>
         <div id="newWordForm" class="row">
             <div class="form-group col-lg-5">
                 <label for="vWord" class="sr-only"></label>
                 <input id="vWord" class="form-control input-group-lg reg_name" type="text" name="vWord"
-                    title="Enter the Vietnamese word" placeholder="Vietnamese word or sentence" />
+                    title="Enter a Vietnamese word or sentence" placeholder="Vietnamese word or sentence" />
             </div>
 
             <div class="form-group col-lg-5">
                 <label for="eWord" class="sr-only"></label>
                 <input id="eWord" class="form-control input-group-lg reg_name" type="text" name="eWord"
-                    title="Enter the English word" placeholder="English word or sentence" />
+                    title="Enter a English word or sentence" placeholder="English word or sentence" />
 
             </div>
-            <div class="form-group col-lg-1">
+            <div class="form-group col-lg-2">
                 <button id="submitNewWordBtn" class="btn btn-primary">Add</button>
+                <button id="clear" class="btn btn-primary">Clear</button>
             </div>
         </div>
         <br>
+      <div id="buttonsContainer">
+        <div class="text-left float-left" id="deletionButtons">
+          <button class="delete btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </div>
+        <div class="text-right">
+          <button id="showAll" class="btn btn-primary">All</button>
+          <button id="random" class="btn btn-primary">Random</button>
+        </div>
+      </div>
+
         <table id="content" class="table">
             <thead>
                 <tr>
                     <th>Vietnamese</th>
                     <th>English</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody></tbody>
