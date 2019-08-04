@@ -68,14 +68,11 @@ app.get('/getRandomWord', (req, res) => {
 
 app.get('/search', (req, res) => {
     let lang = req.query.lang;
-    let st = new RegExp(req.query.st);
+    let st = new RegExp(RegExp.escape(req.query.st), "i");
 
-    var toFind = {};
-    if (lang === 'viet') {
-        toFind.viet = st;
-    } else {
-        toFind.eng = st;
-    };
+    let toFind = {};
+
+    lang === 'viet' ? toFind.viet = st : toFind.eng = st;
 
     db.find(toFind, (err, docs) => {
         if (err) {
@@ -85,3 +82,7 @@ app.get('/search', (req, res) => {
         res.send(docs);
     });
 });
+
+RegExp.escape= function(s) {
+    return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+};

@@ -44,6 +44,8 @@ $(() => {
                 return;
             }
         });
+
+        $('#vWord').focus();
     });
 
     $('#clear').click(() => {
@@ -138,7 +140,12 @@ $(() => {
     };
 
     function getAllWords() {
-        $.getJSON('/getAllWords').then((resp) => populateTable(resp, resp.length));
+	console.log("Before Get all words");
+        $.getJSON('/getAllWords').then((resp) => {
+		populateTable(resp, resp.length); 
+		console.log(resp);
+	});
+	console.log("After Get all words");
     };
 
     function getRandomWord() {
@@ -173,7 +180,9 @@ $(() => {
 
         if (searchedTerm) {
             for (let i = 0; i < num; i++) {
-                data[i][lang] = data[i][lang].split(searchedTerm).join(`<mark>${searchedTerm}</mark>`);
+		let regex = new RegExp(RegExp.escape(searchedTerm), "i");
+		let original = data[i][lang].match(regex);
+                data[i][lang] = data[i][lang].split(regex).join(`<mark>${original}</mark>`);
             };
         };
 
@@ -187,3 +196,7 @@ $(() => {
         };
     };
 });
+
+RegExp.escape= function(s) {
+    return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+};

@@ -6,6 +6,15 @@
   #buttonsContainer {
     padding-bottom: 5px;
   }
+
+* {
+  font-size: 17px;
+  font-family: Calibri;
+}
+
+.form-control, td, th, input, mark {
+  font-size: 22px;
+}
   
   mark {
     background-color: lightblue;
