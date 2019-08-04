@@ -51,6 +51,7 @@ $(() => {
     $('#clear').click(() => {
         $('#vWord').val('');
         $('#eWord').val('');
+        $('#vWord').focus();
     });
 
     $('#vWord, #eWord').keyup((e) => {
