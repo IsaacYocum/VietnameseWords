@@ -9,7 +9,6 @@ $(() => {
 
     $(document).on('click', 'tr', (e) => {
         if (allowDeleting) {
-            console.log($(e.target).parents('tr'))
             let target = $(e.target).parents('tr');
             target.css("background-color", "lightblue");
             target.addClass('toBeDeleted');
@@ -34,7 +33,6 @@ $(() => {
             contentType: 'application/json',
             data: JSON.stringify(newTrans),
             success: (resp) => {
-                console.log(resp);
                 $('#vWord').val('');
                 $('#eWord').val('');
                 populateTable(newTrans, 1);
@@ -67,7 +65,6 @@ $(() => {
             dataType: 'json',
             contentType: 'application/json',
             success: (resp) => {
-                console.log(resp);
                 populateTable(resp, resp.length, searchedTerm.st, searchedTerm.lang)
             },
             error: (resp) => {
@@ -116,7 +113,7 @@ $(() => {
         }
         deleteWord(idsToDelete);
     })
-  
+
     function deleteWord(id) {
         if (confirm('Please confirm this deletion.')) {
             $.ajax({
@@ -125,7 +122,7 @@ $(() => {
                 dataType: 'json',
                 success: (resp) => {
                     for (let i = 0; i < id.length; i++) {
-                      $(`#${id[i]._id}`).empty();
+                        $(`#${id[i]._id}`).empty();
                     };
                     cancelDelete();
                 },
@@ -141,12 +138,7 @@ $(() => {
     };
 
     function getAllWords() {
-	console.log("Before Get all words");
-        $.getJSON('/getAllWords').then((resp) => {
-		populateTable(resp, resp.length); 
-		console.log(resp);
-	});
-	console.log("After Get all words");
+        $.getJSON('/getAllWords').then((resp) => populateTable(resp, resp.length));
     };
 
     function getRandomWord() {
@@ -166,8 +158,8 @@ $(() => {
             dataType: 'json',
             contentType: 'application/json',
             data: JSON.stringify(updatedTrans),
-            success: (resp) => {
-                console.log("Update successful");
+            success: () => {
+                // console.log("Update successful");
             },
             error: (err) => {
                 console.log('Error updating translation:' + err);
@@ -176,13 +168,25 @@ $(() => {
         });
     };
 
+    // Affects the visibility of the English column. Useful if I want to guess 
+    // what the Vietnamese word is before seeing it's translation
+    let showEnglish = true;
+    $('#showEnglishBtn').click(() => {
+        if (showEnglish) {
+            $('td:nth-child(2)').css('opacity', '0');
+        } else if (!showEnglish) {
+            $('td:nth-child(2)').css('opacity', '1');
+        }
+        showEnglish = !showEnglish
+    });
+
     function populateTable(data, num, searchedTerm, lang) {
         $('tbody').empty();
 
         if (searchedTerm) {
             for (let i = 0; i < num; i++) {
-		let regex = new RegExp(RegExp.escape(searchedTerm), "i");
-		let original = data[i][lang].match(regex);
+                let regex = new RegExp(RegExp.escape(searchedTerm), "i");
+                let original = data[i][lang].match(regex);
                 data[i][lang] = data[i][lang].split(regex).join(`<mark>${original}</mark>`);
             };
         };
@@ -191,13 +195,13 @@ $(() => {
             $('tbody').append(`
                   <tr id="${data[i]._id}">
                       <td contenteditable="true" spellcheck="false">${data[i].viet}</td>
-                      <td contenteditable="true">${data[i].eng}</td>
+                      <td contenteditable="true" class="${showEnglish ? "showEnglish" : "hideEnglish"}">${data[i].eng}</td>
                   </tr>
             `);
         };
-    };
+    };    
 });
 
-RegExp.escape= function(s) {
+RegExp.escape = function (s) {
     return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 };

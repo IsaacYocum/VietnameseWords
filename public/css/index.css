@@ -1,11 +1,23 @@
 #newWordForm {
-    padding-top: 15px;
-    background-color: #edf3fc;
-  }
+  padding-top: 15px;
+  background-color: #edf3fc;
+}
   
-  #buttonsContainer {
-    padding-bottom: 5px;
-  }
+#buttonsContainer {
+  padding-bottom: 5px;
+}
+
+#showEnglishBtn {
+  float: right;
+}
+
+.showEnglish {
+  opacity: 1;
+}
+
+.hideEnglish {
+  opacity: 0;
+}
 
 * {
   font-size: 17px;
@@ -16,38 +28,38 @@
   font-size: 22px;
 }
   
-  mark {
-    background-color: lightblue;
-    padding-left: 0;
-    padding-right: 0;
-  }
-  
-  table {
-    table-layout: fixed;
-    overflow-wrap: break-word;
-  }
-  
-  td:first-child,
-  td:nth-child(2),
-  th:first-child,
-  th:nth-child(2){
-    text-align: left
-  }
-  
-  th {
-    background-color: aliceblue;
-  }
-  
-  .fa-trash,
-  .fa-check,
-  .fa-times {
-    color: black;
-  }
-  
-  tr:hover {
-    background-color: aliceblue;
-  }
-  
-  tr:focus-within {
-      background-color: aliceblue;
-  }
+mark {
+  background-color: lightblue;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+table {
+  table-layout: fixed;
+  overflow-wrap: break-word;
+}
+
+td:first-child,
+td:nth-child(2),
+th:first-child,
+th:nth-child(2){
+  text-align: left
+}
+
+th {
+  background-color: aliceblue;
+}
+
+.fa-trash,
+.fa-check,
+.fa-times {
+  color: black;
+}
+
+tr:hover {
+  background-color: aliceblue;
+}
+
+tr:focus-within {
+  background-color: aliceblue;
+}

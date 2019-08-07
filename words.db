@@ -7,6 +7,7 @@
 {"viet":"Cái này bao nhiêu tiền?","eng":"How much is this?","_id":"1uFQy0oDNZIPRWdy"}
 {"viet":"anh ấy","eng":"he","_id":"25Rezxkw26csUMQK"}
 {"viet":"thi","eng":"exam","_id":"2HVJlMN5x4AFF5Of"}
+{"viet":"Báo","eng":"Newspaper","_id":"2v8l2wTbne5i0aGY"}
 {"viet":"Gặp","eng":"Meet","_id":"2zpzzukDucaffOjM"}
 {"viet":"bác sĩ","eng":"doctor","_id":"30Hl7dVEraKhymtZ"}
 {"viet":"triệu","eng":"million - number ","_id":"3Ge5YfQUqG5LMjP4"}
@@ -15,6 +16,7 @@
 {"viet":"Dạo này","eng":"Recently, lately ","_id":"3op6YLo7qCLDONTg"}
 {"viet":"cảm ơn","eng":"thank you","_id":"5hdbWVx5ywrPkQ0x"}
 {"viet":"làm ơn","eng":"please","_id":"6A5ChZSyXtsRjwHP"}
+{"viet":"Thư","eng":"Letter","_id":"6MxLvgO7n0efVirE"}
 {"viet":"học","eng":"study","_id":"6UyITMCOdNvHXasS"}
 {"viet":"Xe","eng":"Car","_id":"6aaHDdAFiPtJpUcA"}
 {"viet":"mình","eng":"I or we","_id":"6mdcYj7Y1pT77uMX"}
@@ -42,6 +44,7 @@
 {"viet":"mang đến","eng":"bring","_id":"EFcWik856wQlfGjP"}
 {"viet":"ngôi ","eng":"throne","_id":"EgjhDiXskZhcxbg2"}
 {"viet":"chiếc","eng":"single item","_id":"F3iN0RPze8xzxsCJ"}
+{"viet":"Nhảy","eng":"Dance","_id":"F8SGHeS5ycnpck6O"}
 {"viet":"dở","eng":"bad","_id":"F9VTywbwyFwYa3Vj"}
 {"viet":"ôm","eng":"hug","_id":"FOhRndWI7HTPbZFj"}
 {"viet":"đợi","eng":"wait","_id":"FSZqNmrAYGDkj0km"}
@@ -70,6 +73,7 @@
 {"viet":"ỉa","eng":"pooping","_id":"LsBfOm9SK44f3yU0"}
 {"viet":"Bao nhiêu tiền?","eng":"How much?","_id":"LtTUYdtu5lr2fGhH"}
 {"viet":"bộ","eng":"walk","_id":"LwRg9xfQHCMt4Yku"}
+{"viet":"Nghe","eng":"Listen","_id":"MFHpApmBoHwUZJcy"}
 {"viet":"mười","eng":"ten - number ","_id":"MFOCkDbIVSJ7d7qD"}
 {"viet":"chồng","eng":"husband","_id":"MwTWiCMDK34umAvn"}
 {"viet":"chán","eng":"bored, lose interest","_id":"N6QEFqkFUJ3Ue3ag"}
@@ -80,13 +84,16 @@
 {"viet":"xạo","eng":"lie, bullshit","_id":"OGef6Ef1uRYEIBWN"}
 {"viet":"đầu bếp","eng":"chef","_id":"OIZ9pbAXkyDvTi9U"}
 {"viet":"vẽ","eng":"draw, paint","_id":"Ormo4SrXZCGOiCnf"}
+{"viet":"Xem","eng":"See, watch","_id":"P0QBaMH1BZ8DapPS"}
 {"viet":"a","eng":"a","_id":"P38eXSzKqJDHQLr1"}
 {"viet":"đói","eng":"hungry","_id":"PI1GmGpI6TNy1Pnf"}
 {"viet":"cảnh sát","eng":"police","_id":"PLkTCyIC3J4m8EEX"}
 {"viet":"năm","eng":"five, year - number ","_id":"PagTc9coXsY5uVBQ"}
 {"viet":"dao","eng":"knife","_id":"PnGPwYQYPuYM70Va"}
+{"viet":"Hát","eng":"Sing","_id":"Pq0tGWTWrgib6Mtu"}
 {"viet":"ax","eng":"ax","_id":"QPGFO5tMPjuj44at"}
 {"viet":"cả","eng":"all, entire","_id":"Qfu8Hka08MSDR2RS"}
+{"viet":"Nhạc","eng":"Music","_id":"R02WAjMwj2sj5U50"}
 {"viet":"sợ","eng":"fear","_id":"R34Vl3L7kqrQr0Ps"}
 {"viet":"e, ê","eng":"ea, capital a - alphabet ","_id":"RNif6NhOmRd0WqXd"}
 {"viet":"mùa","eng":"season","_id":"RlLKm6ZlAmyr7XJr"}
@@ -112,7 +119,9 @@
 {"viet":"Apple tiếng việt nói thế nào?","eng":"How do you say apple in Vietnamese?","_id":"X8XMUWzZhfNnerPZ"}
 {"viet":"người","eng":"people","_id":"XCBu12UYqz504CX3"}
 {"viet":"Không phải là","eng":"not, Saying something isn't something else. I am not Vietnamese.(","_id":"XEYxmu6wragU3hiP"}
+{"viet":"Chơi","eng":"Play","_id":"XNfAFmHJPCUeREVx"}
 {"viet":"uống","eng":"drink","_id":"XVwmtN6RljAWPBv0"}
+{"viet":"Ti vi","eng":"Tv","_id":"XWu54Z28K1iIQgK4"}
 {"viet":"Rất vui khi gặp bạn! ","eng":"Nice to meet you! ","_id":"Xk1wbkX9BOLckGuc"}
 {"viet":"đọc","eng":"read","_id":"XlQ9PpKhzMNPDc0A"}
 {"viet":"hiện","eng":"appear, to come into sight","_id":"XspppBQ0DY7Amr61"}
@@ -144,6 +153,7 @@
 {"viet":"công viên","eng":"park","_id":"caVmaahbkTduVHfG"}
 {"viet":"luật sư","eng":"lawyer","_id":"cccQefXDhcYuTYKH"}
 {"viet":"họ","eng":"They","_id":"cg2UWdKOPOFTqggk"}
+{"viet":"Bơi","eng":"Swim","_id":"cgXkT0Ub4MoqIMs1"}
 {"viet":"ba","eng":"three - number ","_id":"cjBzzu3Bru5DvkiK"}
 {"viet":"ông","eng":"Mr., older male, grandpa","_id":"cqYqYQ6ynlwZm5xf"}
 {"viet":"rất","eng":"very","_id":"cs6dtzFmnAP2Lwz4"}
@@ -177,6 +187,7 @@
 {"viet":"đã","eng":"in the past - tense ","_id":"kVic89s7adSWVbY0"}
 {"viet":"cần","eng":"need","_id":"kt1g3z3SaqZlXMtn"}
 {"viet":"nhiêu","eng":"much, many, a lot","_id":"lTChc2GEcuOmCGo5"}
+{"viet":"dịch","eng":"translation","_id":"lhXsEn3pqEeRu1IS"}
 {"viet":"khi nào","eng":"when - question ","_id":"m8hZDGetbdJMkNAJ"}
 {"viet":"số","eng":"number","_id":"mGhPUN7VSWiKqjhi"}
 {"viet":"bao nhiêu","eng":"how many","_id":"mbkqu2wTz54EIWeG"}
@@ -198,6 +209,7 @@
 {"viet":"Anh muốn đi về nhà.","eng":"I want to go home.","_id":"r8B5aqEWRFxB0aBF"}
 {"viet":"một mình","eng":"alone","_id":"r8ysz81W8X4DDkIm"}
 {"viet":"vào","eng":"enter, into, on","_id":"rJwyaKmpw9g0zwUv"}
+{"viet":"Sách","eng":"Book","_id":"rh9vnbBQLLbM2Lfx"}
 {"viet":"gia đình","eng":"or","_id":"rwnQ43RgorilUcCV"}
 {"viet":"mà","eng":"that, which","_id":"sjzv4oUlT7GlMX9H"}
 {"viet":"người phụ nữ","eng":"woman, lady","_id":"t2PwDugSIRzxsxAa"}
@@ -210,6 +222,7 @@
 {"viet":"tòa nhà","eng":"building","_id":"uq6zzX0ZI9LSaMKn"}
 {"viet":"nôn nao","eng":"excited","_id":"uvQXvojHilx3kl3g"}
 {"viet":"trỏi ôi","eng":"oh my, oh my god","_id":"v3UO1kkioj9vaj3O"}
+{"viet":"Viết","eng":"Write","_id":"vB1dCJiyFrvtEcwn"}
 {"viet":"tốt lắm","eng":"good job","_id":"vOoH5RqnzzntSmPt"}
 {"viet":"sáu","eng":"six - number ","_id":"w27R19ZplOqZcdc2"}
 {"viet":"chỏi","eng":"play","_id":"wK7YRVYjTxsotCi3"}
@@ -222,16 +235,13 @@
 {"viet":"hoa","eng":"flower, floral","_id":"yCTfTROMNw847yCW"}
 {"viet":"tạm biệt","eng":"goodbye","_id":"zfSaSEXR7vqzJW7w"}
 {"viet":"a, ă, â","eng":"ahh, ah?, uh? - alphabet ","_id":"zhSxzTeE1jSLXJHS"}
-{"viet":"dịch","eng":"translation","_id":"lhXsEn3pqEeRu1IS"}
-{"viet":"Hát","eng":"Sing","_id":"Pq0tGWTWrgib6Mtu"}
-{"viet":"Nhảy","eng":"Dance","_id":"F8SGHeS5ycnpck6O"}
-{"viet":"Sách","eng":"Book","_id":"rh9vnbBQLLbM2Lfx"}
-{"viet":"Viết","eng":"Write","_id":"vB1dCJiyFrvtEcwn"}
+{"viet":"ừ","eng":"yes - to someone of a lower social statusaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","_id":"0Cm01h4byzXLTtIc"}
+{"viet":"ừ","eng":"yes - to someone of a lower social status","_id":"0Cm01h4byzXLTtIc"}
+{"viet":"nghĩa","eng":"mean, meaninga","_id":"d045LilY7LVoOhO6"}
+{"viet":"nghĩa","eng":"mean, meaning","_id":"d045LilY7LVoOhO6"}
+{"viet":"Thư","eng":"Lettera","_id":"6MxLvgO7n0efVirE"}
 {"viet":"Thư","eng":"Letter","_id":"6MxLvgO7n0efVirE"}
-{"viet":"Nghe","eng":"Listen","_id":"MFHpApmBoHwUZJcy"}
-{"viet":"Nhạc","eng":"Music","_id":"R02WAjMwj2sj5U50"}
-{"viet":"Báo","eng":"Newspaper","_id":"2v8l2wTbne5i0aGY"}
-{"viet":"Bơi","eng":"Swim","_id":"cgXkT0Ub4MoqIMs1"}
-{"viet":"Ti vi","eng":"Tv","_id":"XWu54Z28K1iIQgK4"}
-{"viet":"Xem","eng":"See, watch","_id":"P0QBaMH1BZ8DapPS"}
-{"viet":"Chơi","eng":"Play","_id":"XNfAFmHJPCUeREVx"}
+{"viet":"Là","eng":"is, area","_id":"1Z7z7yEtXpwRhEVb"}
+{"viet":"Là","eng":"is, are","_id":"1Z7z7yEtXpwRhEVb"}
+{"viet":"ừ","eng":"yes - to someone of a lower social status","_id":"0Cm01h4byzXLTtIc"}
+{"viet":"ừ","eng":"yes - to someone of a lower social status","_id":"0Cm01h4byzXLTtIc"}
