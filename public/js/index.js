@@ -1,4 +1,13 @@
 $(() => {
+    var clientdb = [];
+    var changeableDB = [];
+    populateClientDb();
+
+    async function populateClientDb() {
+        await $.getJSON('/getAllWords').then((resp) => clientdb = resp);
+        changeableDB = JSON.parse(JSON.stringify(clientdb));
+    }
+
     var allowDeleting = false;
     $('#showAll').click(() => { getAllWords(); cancelDelete(); });
     $('#random').click(() => { getRandomWord(); cancelDelete(); });
@@ -35,12 +44,15 @@ $(() => {
             success: (resp) => {
                 $('#vWord').val('');
                 $('#eWord').val('');
-                populateTable(newTrans, 1);
+                let trans = [newTrans];
+                populateTable(trans, 1);
             },
             error: (err) => {
                 console.log("Error adding a new translation: " + err);
                 return;
             }
+        }).then(() => {
+            populateClientDb();
         });
 
         $('#vWord').focus();
@@ -49,30 +61,41 @@ $(() => {
     $('#clear').click(() => {
         $('#vWord').val('');
         $('#eWord').val('');
-        $('#vWord').focus(); 
+        $('tbody').empty();
+        $('#vWord').focus();
     });
 
-    $('#vWord, #eWord').keyup((e) => {
-        let searchedTerm = new Object;
-        let language = (e.target.id === 'eWord') ? 'eng' : 'viet';
+    $('#options').click(() => $('#buttonsContainer').toggle());
 
-        searchedTerm.lang = language;
-        searchedTerm.st = e.target.value;
-
-        $.ajax({
-            url: '/search',
-            data: searchedTerm,
-            dataType: 'json',
-            contentType: 'application/json',
-            success: (resp) => {
-                populateTable(resp, resp.length, searchedTerm.st, searchedTerm.lang)
-            },
-            error: (resp) => {
-                console.log(resp);
-                return;
+    $('#vWord, #eWord').on('input', ((e) => {
+        if (e.target.value != '') {
+            if (clientdb.length < 1) {
+                populateClientDb();
             }
-        });
-    });
+
+            let changeableDB = JSON.parse(JSON.stringify(clientdb));
+
+            let searchTerm = {
+                lang: (e.target.id === 'eWord') ? 'eng' : 'viet',
+                st: e.target.value
+            };
+
+            let st = new RegExp(RegExp.escape(searchTerm.st), "i");
+
+            let searchResults = [];
+
+            for (item in changeableDB) {
+                if (st.test(changeableDB[item][searchTerm.lang])) {
+                    searchResults.push(changeableDB[item]);
+                }
+            }
+
+            populateTable(searchResults, searchResults.length, e.target.value, searchTerm.lang);
+
+        } else {
+            $('tbody').empty();
+        }
+    }));
 
     $(document).on('click', '.delete', (e) => {
         allowDelete();
@@ -115,7 +138,7 @@ $(() => {
     })
 
     function deleteWord(id) {
-        if (confirm('Please confirm this deletion.')) {
+        if (confirm('Are you sure you want to delete this translation?.')) {
             $.ajax({
                 url: '/deleteWord',
                 data: { delId: id },
@@ -131,7 +154,9 @@ $(() => {
                     cancelDelete();
                     return;
                 }
-            });
+            }).then(() => {
+                populateClientDb();
+            });;
         } else {
             return;
         };
@@ -158,8 +183,8 @@ $(() => {
             dataType: 'json',
             contentType: 'application/json',
             data: JSON.stringify(updatedTrans),
-            success: () => {
-                // console.log("Update successful");
+            success: (resp) => {
+                clientdb = resp;
             },
             error: (err) => {
                 console.log('Error updating translation:' + err);
@@ -180,26 +205,25 @@ $(() => {
         showEnglish = !showEnglish
     });
 
-    function populateTable(data, num, searchedTerm, lang) {
+    function populateTable(data, num, searchTerm, lang) {
         $('tbody').empty();
-
-        if (searchedTerm) {
+        if (searchTerm) {
             for (let i = 0; i < num; i++) {
-                let regex = new RegExp(RegExp.escape(searchedTerm), "i");
+                let regex = new RegExp(RegExp.escape(searchTerm), "i");
                 let original = data[i][lang].match(regex);
                 data[i][lang] = data[i][lang].split(regex).join(`<mark>${original}</mark>`);
             };
         };
 
-        for (let i = 0; i < num; i++) {
+        for (let row in data) {
             $('tbody').append(`
-                  <tr id="${data[i]._id}">
-                      <td contenteditable="true" spellcheck="false">${data[i].viet}</td>
-                      <td contenteditable="true" class="${showEnglish ? "showEnglish" : "hideEnglish"}">${data[i].eng}</td>
+                  <tr id="${data[row]._id}">
+                      <td contenteditable="true" spellcheck="false">${data[row].viet}</td>
+                      <td contenteditable="true" class="${showEnglish ? "showEnglish" : "hideEnglish"}">${data[row].eng}</td>
                   </tr>
             `);
         };
-    };    
+    };
 });
 
 RegExp.escape = function (s) {

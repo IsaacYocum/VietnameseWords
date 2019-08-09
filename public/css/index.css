@@ -1,14 +1,32 @@
+* {
+  font-size: 17px;
+  font-family: Calibri;
+}
+
+.form-control, td, th, input, mark {
+  font-size: 22px;
+}
+
 #newWordForm {
-  padding-top: 15px;
+  padding-top: .35rem;
   background-color: #edf3fc;
 }
+
+#submitButtonGroup {
+  display: table-cell;
+  vertical-align: middle;
+}
   
-#buttonsContainer { 
+#buttonsContainer {
   padding-bottom: 5px;
 }
 
 #showEnglishBtn {
   float: right;
+}
+
+.spacer {
+  height: .35rem;
 }
 
 .showEnglish {
@@ -19,13 +37,18 @@
   opacity: 0;
 }
 
-* {
-  font-size: 17px;
-  font-family: Calibri;
+th:first-child,
+td:first-child {
+  border-right: 1px solid #DEE2E6;
 }
 
-.form-control, td, th, input, mark {
-  font-size: 22px;
+.form-control {
+  height: calc(1.5em + .5rem + 2px);
+  padding: .1rem, .5rem;
+}
+
+.form-group {
+  margin-bottom: .35rem;
 }
   
 mark {
@@ -50,10 +73,29 @@ th {
   background-color: aliceblue;
 }
 
+.table th,
+.table td {
+  padding: .25rem;
+}
+
 .fa-trash,
 .fa-check,
 .fa-times {
   color: black;
+}
+
+.col-lg-5 {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.col-lg-2 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.btn {
+  padding: .175rem .5rem;
 }
 
 tr:hover {
