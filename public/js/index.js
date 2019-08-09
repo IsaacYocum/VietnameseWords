@@ -49,7 +49,7 @@ $(() => {
     $('#clear').click(() => {
         $('#vWord').val('');
         $('#eWord').val('');
-        $('#vWord').focus();
+        $('#vWord').focus(); 
     });
 
     $('#vWord, #eWord').keyup((e) => {

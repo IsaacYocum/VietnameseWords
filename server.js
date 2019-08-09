@@ -24,7 +24,7 @@ app.post('/updateTrans', (req, res) => {
     db.update({_id: req.body._id}, req.body, (err) => {
         if (err) {
             console.log(err);
-            res.end();
+            res.end(); 
             return;
         }
         res.send({status: 'Successful'});
