@@ -1,3 +1,4 @@
+{"viet":"Giám đốc","eng":"CEO","_id":"02yuVAhSXUEOnwXQ"}
 {"viet":"ừ","eng":"yes - to someone of a lower social status","_id":"0Cm01h4byzXLTtIc"}
 {"viet":"của tôi, của mình","eng":"my, our","_id":"0HGWlc3SbKHntlna"}
 {"viet":"Ở đâu","eng":"where - question ","_id":"1RlX3H8tMctJqig6"}
@@ -14,6 +15,8 @@
 {"viet":"bắp rang","eng":"popcorn","_id":"3ZYrQDlgzzbz1wGK"}
 {"viet":"xin chào","eng":"hello - formal","_id":"3bFO9aRo6vlN5sUr"}
 {"viet":"Dạo này","eng":"Recently, lately ","_id":"3op6YLo7qCLDONTg"}
+{"viet":"Màu","eng":"Classifier for color (classifier) ","_id":"48PqMauojh3ZszBi"}
+{"viet":"Banh","eng":"Ball","_id":"4SoYGqPonfFyDvMa"}
 {"viet":"Trừ","eng":"Minus","_id":"5BU1x74jFAbV24JP"}
 {"viet":"cảm ơn","eng":"thank you","_id":"5hdbWVx5ywrPkQ0x"}
 {"viet":"làm ơn","eng":"please","_id":"6A5ChZSyXtsRjwHP"}
@@ -23,7 +26,7 @@
 {"viet":"mình","eng":"I or we","_id":"6mdcYj7Y1pT77uMX"}
 {"viet":"đu đủ","eng":"papaya","_id":"6twrZgfBPdGxLWOs"}
 {"viet":"không","eng":"no","_id":"780Q2Gp6MRWHlg5k"}
-{"viet":"người","eng":"general classifier for people","_id":"7JTd9CcVvuwqxgRA"}
+{"viet":"người","eng":"general classifier for people (classifier) ","_id":"7JTd9CcVvuwqxgRA"}
 {"viet":"sắp","eng":"soon, almost, in the near future - tense ","_id":"7QnRx82CIZRyBst6"}
 {"viet":"như thế nào","eng":"how - question ","_id":"7XebR8ZjMI6y3OvW"}
 {"viet":"tiền","eng":"money","_id":"87VymxsoT4ieEtPT"}
@@ -44,9 +47,10 @@
 {"viet":"Chết","eng":"Death/dead","_id":"Cl10ceQr6k0vk8ll"}
 {"viet":"Rồng vàng hoàng gia.","eng":"Royal golden dragon.","_id":"CmIbddlzdRhewX4f"}
 {"viet":"một","eng":"one - number ","_id":"DVZ0xvigbNXJhvRN"}
-{"viet":"quả","eng":"classifier for fruits or circular objects","_id":"Db5fXoP7lnQcIpyv"}
-{"viet":"vị","eng":"polite classfier for people","_id":"DogNl1IMBESHNpb3"}
+{"viet":"quả","eng":"classifier for fruits or circular objects (classifier) ","_id":"Db5fXoP7lnQcIpyv"}
+{"viet":"vị","eng":"polite classfier for people (classifier) ","_id":"DogNl1IMBESHNpb3"}
 {"viet":"mang đến","eng":"bring","_id":"EFcWik856wQlfGjP"}
+{"viet":"Đen","eng":"Black","_id":"EVmF5t9tgK35JqXf"}
 {"viet":"ngôi ","eng":"throne","_id":"EgjhDiXskZhcxbg2"}
 {"viet":"chiếc","eng":"single item","_id":"F3iN0RPze8xzxsCJ"}
 {"viet":"Nhảy","eng":"Dance","_id":"F8SGHeS5ycnpck6O"}
@@ -57,6 +61,7 @@
 {"viet":"con","eng":"me - when talking to elder people","_id":"Fcgmpi2f6LxQWGkv"}
 {"viet":"suốt","eng":"perpetual, through out, through all time","_id":"FlsyJFfQD99S1gp5"}
 {"viet":"rau","eng":"vegetables","_id":"G1pXoN74jdFAQqqd"}
+{"viet":"Da cam","eng":"Orange (color) ","_id":"GHZvXQkgZ7tetayT"}
 {"viet":"khác","eng":"other, different","_id":"GhVVhfhpPvrvczAX"}
 {"viet":"xin lỗi","eng":"sorry","_id":"GiBOQpfd9RMBcTsy"}
 {"viet":"tám","eng":"eight - number ","_id":"GlV7AgOpALq7JvEX"}
@@ -78,7 +83,7 @@
 {"viet":"dạ","eng":"yes - to someone of a higher social status","_id":"LoHIgfjMNSSzN2lV"}
 {"viet":"ỉa","eng":"pooping","_id":"LsBfOm9SK44f3yU0"}
 {"viet":"Bao nhiêu tiền?","eng":"How much?","_id":"LtTUYdtu5lr2fGhH"}
-{"viet":"bộ","eng":"walk","_id":"LwRg9xfQHCMt4Yku"}
+{"viet":"Đi bộ","eng":"walk","_id":"LwRg9xfQHCMt4Yku"}
 {"viet":"Nghe","eng":"Listen","_id":"MFHpApmBoHwUZJcy"}
 {"viet":"mười","eng":"ten - number ","_id":"MFOCkDbIVSJ7d7qD"}
 {"viet":"chồng","eng":"husband","_id":"MwTWiCMDK34umAvn"}
@@ -90,12 +95,13 @@
 {"viet":"xạo","eng":"lie, bullshit","_id":"OGef6Ef1uRYEIBWN"}
 {"viet":"đầu bếp","eng":"chef","_id":"OIZ9pbAXkyDvTi9U"}
 {"viet":"Gà","eng":"Chicken","_id":"Ob83p3Tk8HIQOBG7"}
+{"viet":"Trắng","eng":"White (color) ","_id":"OomxFJuIgwZIg5PG"}
 {"viet":"vẽ","eng":"draw, paint","_id":"Ormo4SrXZCGOiCnf"}
 {"viet":"Xem","eng":"See, watch","_id":"P0QBaMH1BZ8DapPS"}
 {"viet":"a","eng":"a","_id":"P38eXSzKqJDHQLr1"}
 {"viet":"đói","eng":"hungry","_id":"PI1GmGpI6TNy1Pnf"}
 {"viet":"cảnh sát","eng":"police","_id":"PLkTCyIC3J4m8EEX"}
-{"viet":"quyển","eng":"classifier for books, volumes","_id":"PUesaMXPhQIBQ0c0"}
+{"viet":"quyển","eng":"classifier for books, volumes (classifier) ","_id":"PUesaMXPhQIBQ0c0"}
 {"viet":"năm","eng":"five, year - number ","_id":"PagTc9coXsY5uVBQ"}
 {"viet":"dao","eng":"knife","_id":"PnGPwYQYPuYM70Va"}
 {"viet":"Hát","eng":"Sing","_id":"Pq0tGWTWrgib6Mtu"}
@@ -121,13 +127,14 @@
 {"viet":"Mệt","eng":"Tired","_id":"USIEEfkvSk1WHjkT"}
 {"viet":"em trai","eng":"younger brother","_id":"UvejtvDYFVTd9AEN"}
 {"viet":"ngồi","eng":"sit","_id":"Ve08XqXDLHNOhmCQ"}
+{"viet":"Xanh da trời","eng":"Blue (color) ","_id":"WAqUfik3GPXCr7JN"}
 {"viet":"hiểu","eng":"understand","_id":"WDx5BspK2HU2ZItz"}
 {"viet":"vui","eng":"fun, amusing","_id":"WKKRz8lQgn84NQTY"}
 {"viet":"buồn","eng":"sad","_id":"WKdhPGCSuOzhEayK"}
 {"viet":"bé, tí","eng":"little, small","_id":"WOLDRy92qOBUXsDx"}
 {"viet":"Apple tiếng việt nói thế nào?","eng":"How do you say apple in Vietnamese?","_id":"X8XMUWzZhfNnerPZ"}
 {"viet":"người","eng":"people","_id":"XCBu12UYqz504CX3"}
-{"viet":"Không phải là","eng":"not, Saying something isn't something else. I am not Vietnamese.(","_id":"XEYxmu6wragU3hiP"}
+{"viet":"Không phải là","eng":"not, Saying something isn't something else. I am not Vietnamese.","_id":"XEYxmu6wragU3hiP"}
 {"viet":"Chơi","eng":"Play","_id":"XNfAFmHJPCUeREVx"}
 {"viet":"uống","eng":"drink","_id":"XVwmtN6RljAWPBv0"}
 {"viet":"Ti vi","eng":"Tv","_id":"XWu54Z28K1iIQgK4"}
@@ -144,8 +151,10 @@
 {"viet":"Đi xem phim.","eng":"Go see a movie.","_id":"ZbsqOUXDWqQv9lzt"}
 {"viet":"Đều","eng":"Both/all","_id":"Zp5iDVpwTQE7TkWz"}
 {"viet":"bà","eng":"Mrs., elder female, grandma","_id":"a6Dfk0K2gvxnkxT7"}
+{"viet":"Nông dân","eng":"Farmer ","_id":"aJqWS4GxX2qmMxet"}
 {"viet":"đang ","eng":"right now, at this very moment - tense ","_id":"aLFH4tVtzGpCWO0X"}
 {"viet":"đồ","eng":"stuff, things","_id":"aMJyCYxLiSVak2Mh"}
+{"viet":"Đỏ","eng":"Red (color) ","_id":"aZVCtGNqotWS5GGC"}
 {"viet":"phát hiện ra","eng":"discover","_id":"b78HZmEh5tj4e8qt"}
 {"viet":"con mèo","eng":"cat","_id":"bAgatTwV1YF8KZdB"}
 {"viet":"cả hai","eng":"both","_id":"bCeBL1q35J2Jprf8"}
@@ -185,6 +194,7 @@
 {"viet":"rủ","eng":"invite, entice someone to do things together","_id":"gCwHqTeQJw2ZMO3H"}
 {"viet":"trước khi","eng":"before","_id":"gXU2zYJUVaz0Nko2"}
 {"viet":"tên","eng":"name","_id":"gkj7dAwGEfjyDTJR"}
+{"viet":"Tím","eng":"Purple (color) ","_id":"glqmy1XfBheCOrpE"}
 {"viet":"bát","eng":"Bowl","_id":"gw9NzRiKn3Yj5OKS"}
 {"viet":"anh trai","eng":"older brother","_id":"hgxIrAgPUg5G9nIL"}
 {"viet":"Xoài","eng":"Mango","_id":"hjnqzOrN0o7IliAq"}
@@ -204,9 +214,9 @@
 {"viet":"khi nào","eng":"when - question ","_id":"m8hZDGetbdJMkNAJ"}
 {"viet":"số","eng":"number","_id":"mGhPUN7VSWiKqjhi"}
 {"viet":"bao nhiêu","eng":"how many","_id":"mbkqu2wTz54EIWeG"}
-{"viet":"mới","eng":"in the recent past, more recently than đã - tense ","_id":"miDI5K1hJERz2iif"}
+{"viet":"mới","eng":"New, in the recent past, more recently than đã - tense ","_id":"miDI5K1hJERz2iif"}
 {"viet":"nó","eng":"it, he, she","_id":"mq0yKiayUEcMLYPA"}
-{"viet":"cái","eng":"general classifier, used for inanimate objects","_id":"mvtP8NN7GpB0aiAN"}
+{"viet":"cái","eng":"general classifier, used for inanimate objects (classifier) ","_id":"mvtP8NN7GpB0aiAN"}
 {"viet":"hạnh phúc","eng":"happy","_id":"nKPOnzbML5C33GQ7"}
 {"viet":"Bánh mì","eng":"Bread","_id":"nPCbaLRPfpbvJX5E"}
 {"viet":"bánh","eng":"bread, cake","_id":"ng60SF0cWFDrp4I5"}
@@ -223,14 +233,16 @@
 {"viet":"bảy","eng":"seven - number ","_id":"qucFmiqkGUZ11IdB"}
 {"viet":"Anh muốn đi về nhà.","eng":"I want to go home.","_id":"r8B5aqEWRFxB0aBF"}
 {"viet":"một mình","eng":"alone","_id":"r8ysz81W8X4DDkIm"}
+{"viet":"Giáo sư","eng":"Professor ","_id":"rHfTbDiLgOHsCChm"}
 {"viet":"vào","eng":"enter, into, on","_id":"rJwyaKmpw9g0zwUv"}
 {"viet":"Sách","eng":"Book","_id":"rh9vnbBQLLbM2Lfx"}
+{"viet":"Xanh lá cây","eng":"Green (color) ","_id":"rnlk82Oyuc6P1Aqx"}
 {"viet":"gia đình","eng":"or","_id":"rwnQ43RgorilUcCV"}
 {"viet":"Những","eng":"Indicates plurality. Những con mèo","_id":"s5lxRTwGTAQyzr3b"}
 {"viet":"mà","eng":"that, which","_id":"sjzv4oUlT7GlMX9H"}
 {"viet":"người phụ nữ","eng":"woman, lady","_id":"t2PwDugSIRzxsxAa"}
 {"viet":"ngọt","eng":"sweet","_id":"tSyxKqFZd9XEeIEQ"}
-{"viet":"bức","eng":"classifier for flat, rectangular objects","_id":"tduCF3Ks33lhzuxJ"}
+{"viet":"bức","eng":"classifier for flat, rectangular objects (classifier) ","_id":"tduCF3Ks33lhzuxJ"}
 {"viet":"Nem","eng":"Spring roll","_id":"tsPpHzWoqFSDpbET"}
 {"viet":"Bít tết","eng":"Beef steak","_id":"u0h7os3MfYcqKDiF"}
 {"viet":"Tỉ","eng":"Billion","_id":"uj0RBMMfVMPyyYf9"}
@@ -252,5 +264,6 @@
 {"viet":"cũng chẳng","eng":"either, neither","_id":"xovmZbFCADZmOe9S"}
 {"viet":"d, đ","eng":"yuh, duh - alphabet ","_id":"xzdzfGdvlL1hNZun"}
 {"viet":"hoa","eng":"flower, floral","_id":"yCTfTROMNw847yCW"}
+{"viet":"Vàng","eng":"Yellow (color) ","_id":"zU5bQGU8o7YFiTrp"}
 {"viet":"tạm biệt","eng":"goodbye","_id":"zfSaSEXR7vqzJW7w"}
 {"viet":"a, ă, â","eng":"ahh, ah?, uh? - alphabet ","_id":"zhSxzTeE1jSLXJHS"}
