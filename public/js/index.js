@@ -67,8 +67,8 @@ $(() => {
 
     $('#options').click(() => $('#buttonsContainer').toggle());
 
-    $('#vWord, #eWord').on('input', ((e) => {
-        if (e.target.value != '') {
+    $('#vWord, #eWord').on('input keypress', ((e) => {
+        if (e.target.value != '' || e.which == 13) {
             if (clientdb.length < 1) {
                 populateClientDb();
             }
@@ -90,12 +90,18 @@ $(() => {
                 }
             }
 
+            shuffle(searchResults);
+
             populateTable(searchResults, searchResults.length, e.target.value, searchTerm.lang);
 
         } else {
             $('tbody').empty();
         }
     }));
+
+    async function shuffle(array) {
+        array.sort(() => Math.random() - 0.5);
+    }
 
     $(document).on('click', '.delete', (e) => {
         allowDelete();
